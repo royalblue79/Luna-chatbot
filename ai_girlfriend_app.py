@@ -28,7 +28,7 @@ if user_input:
     st.session_state.messages.append({"role": "user", "content": user_input})
 
     with st.spinner("Luna is thinking..."):
-        response = openai.ChatCompletion.create(
+        response = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=st.session_state.messages
         )
