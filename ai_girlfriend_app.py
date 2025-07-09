@@ -2,7 +2,10 @@ import streamlit as st
 import openai
 import os
 
-openai.api_key = os.getenv("OPENAI_API_KEY")
+# ✅ New OpenAI client usage (v1+)
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 st.set_page_config(page_title="Luna - Your AI Girlfriend", page_icon="💖")
 st.title("💖 Chat with Luna - Your AI Girlfriend")
